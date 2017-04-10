@@ -20,7 +20,7 @@ namespace MyBot
             //Define the DiscordSocketClient
             client = new DiscordSocketClient();
 
-            var token = "token";
+            var token = "hidden bot token";
 
             //Login and connect to discord
             await client.LoginAsync(TokenType.Bot, token);

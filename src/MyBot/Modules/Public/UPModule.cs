@@ -78,10 +78,12 @@ namespace MyBot.Modules.Public
         [Summary("Displays the current state of the csgo server")]
         public async Task ServerInfo()
         {
+            Random rnd = new Random();
+
             Embed welcomeEmb = new EmbedBuilder()
             .WithColor(new Discord.Color(96, 27, 11))
             .WithDescription("Server status: ")
-            .WithImageUrl("http://cache.gametracker.com/server_info/37.187.77.87:29102/b_350_20_692108_381007_FFFFFF_000000.png");
+            .WithImageUrl("http://cache.gametracker.com/server_info/37.187.77.87:29102/b_350_20_692108_381007_FFFFFF_000000.png" + "?_=" + rnd.Next(100000000, 999999999));
 
             await ReplyAsync("", embed: welcomeEmb);
         }

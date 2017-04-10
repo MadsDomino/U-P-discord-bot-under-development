@@ -24,6 +24,23 @@ namespace MyBot.Assets
             commandsList.Add(Ping());
             commandsList.Add(Ip());
             commandsList.Add(Help());
+            commandsList.Add(Serverinfo());
+        }
+
+        private Command Serverinfo()
+        {
+            List<string> tempaliaslist = new List<string>();
+            Command Serverinfo = new Command();
+
+            Serverinfo.name = "ServerInfo";
+            tempaliaslist.Add("serverinfo");
+            tempaliaslist.Add("Serverinfo");
+            tempaliaslist.Add("serverInfo");
+
+            Serverinfo.alias = tempaliaslist;
+
+            Serverinfo.description = "Displays the current state of the csgo server";
+            return Serverinfo;
         }
 
         private Command Ping()
