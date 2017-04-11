@@ -24,8 +24,17 @@ namespace MyBot
 
             //Send user message to get handled
             client.MessageReceived += HandleCommand;
+
+            //Announce user joins server
+            client.UserJoined += AnnounceJoinedUser;
         }
 
+        public async Task AnnounceJoinedUser(SocketGuildUser user)
+        {
+            var channel = client.GetChannel(216823381016838144) as SocketTextChannel;
+
+            await channel.SendMessageAsync("Welcome " + user.Mention + " to our server!");
+        }
 
         public async Task HandleCommand(SocketMessage parameterMessage)
         {
